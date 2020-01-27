@@ -10,7 +10,6 @@ exports.ObtenerTodos = (req, res)=>{
   });
 };
 
-
 exports.crearPais = (req, res)=>{
   const nuevoPais = new modelo({
     idPais: req.body.idPais,
