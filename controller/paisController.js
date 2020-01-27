@@ -29,3 +29,28 @@ exports.crearPais = (req, res)=>{
     }
   });
 }
+
+exports.eliminarPais = (req, res)=>{
+  const idPais = req.body.idPais
+
+  modeloPais.eliminarPais(idPais,(error, data)=>{
+    if(error){
+      res.status(500).send({mensaje:'no se puede eliminar el pais'});
+    }else{
+      res.send(data);
+    }
+  });
+};
+
+
+exports.obtenerPaisSuperficie = (req, res)=>{
+  const superficiePais = req.body.superficie
+
+  modeloPais.obtenerPaisSuperficie(superficiePais,(error, data)=>{
+    if(error){
+      res.status(500).send({mensaje:'no se puede listar los paises'});
+    }else{
+      res.send(data);
+    }
+  });
+};

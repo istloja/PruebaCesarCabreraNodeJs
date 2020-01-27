@@ -34,6 +34,32 @@ pais.crearPais = (nuevoPais, result)=>{
 };
 
 
+pais.eliminarPais = (idPais,result)=>{
+  mysql.query('DELETE FROM pais WHERE idPais = ?', idPais, (error,res)=>{
+      if(error){
+        result(null, error);
+        console.log(error, ' no se puede eliminar el pais');
+        return;
+      }else{
+        result(null, res);
+      }
+  });
+};
+
+
+pais.obtenerPaisSuperficie = (superficiePais, result)=>{
+  mysql.query('SELECT * FROM pais WHERE superficie > ?', superficiePais, (error,res)=>{
+    if(error){
+      result(null, error);
+      console.log(error, ' no se puede listar los paises');
+      return;
+    }else{
+      result(null, res);
+    }
+  })
+}
+
+
 
 
 module.exports= pais;

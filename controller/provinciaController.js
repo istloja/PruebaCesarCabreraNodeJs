@@ -32,7 +32,7 @@ exports.crearProvincia = (req, res)=>{
 
 exports.editarProvincia = (req, res)=> {
 
-    const idProvincia = req.body.codigo;
+    const idProvincia = req.body.idProvincia;
     const editarProvincia = new modelo (req,body);
 
     modelo.editarProvincia(idProvincia,editarProvincia, (error, data)=>{
